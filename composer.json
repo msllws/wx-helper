@@ -1,0 +1,21 @@
+{
+    "name": "zhongshan/wx-helper",
+    "description": "helper for wechat develop",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "liweishan",
+            "email": "1977629361@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php":">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "WxHelper\\Library\\": "src/Library"
+        }
+    }
+}
