@@ -9,13 +9,13 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Lws\Base;
+namespace Lws\BaseService;
 
 class Helper
 {
 
     public function test()
     {
-        echo '老狗真是狗';
+        return '老狗真是狗!';
     }
 }

@@ -12,17 +12,13 @@
 namespace Lws;
 
 /**
- * Class Factory.
+ * Class WxHelper.
  *
- * @method static \EasyWeChat\Payment\Application            payment(array $config)
- * @method static \EasyWeChat\MiniProgram\Application        miniProgram(array $config)
- * @method static \EasyWeChat\OpenPlatform\Application       openPlatform(array $config)
- * @method static \EasyWeChat\OfficialAccount\Application    officialAccount(array $config)
- * @method static \EasyWeChat\BasicService\Application       basicService(array $config)
- * @method static \EasyWeChat\Work\Application               work(array $config)
+ * @method static \Lws\BaseService\Helper            payment(array $config)
  */
 class WxHelper
 {
+
     /**
      * @param string $name
      * @param array  $config
@@ -31,8 +27,8 @@ class WxHelper
      */
     public static function route($name, array $config)
     {
-//        $namespace = Kernel\Support\Str::studly($name);
-        $application = "\\Lws\\{$namespace}\\Helper";
+//        $namespace = self::studly($name);
+        $application = "\\Lws\\{$name}\\Helper";
 
         return new $application($config);
     }
@@ -49,4 +45,5 @@ class WxHelper
     {
         return self::route($name, ...$arguments);
     }
+
 }
