@@ -1,6 +1,6 @@
 <?php
 
-namespace Library;
+namespace Wxhelper\Library;
 
 class Loader {
     public function index(){
