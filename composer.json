@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Wxhelper\\Library\\": "src/Wxhelper/Library"
+            "Lws\\": "src/"
         }
     }
 }
