@@ -14,7 +14,7 @@ namespace Lws;
 /**
  * Class WxHelper.
  *
- * @method static \Lws\BaseService\Helper            payment(array $config)
+ * @method static \Lws\BaseService\Helper            baseService(array $config)
  */
 class WxHelper
 {
@@ -27,9 +27,7 @@ class WxHelper
      */
     public static function route($name, array $config)
     {
-//        $namespace = self::studly($name);
         $application = "\\Lws\\{$name}\\Helper";
-
         return new $application($config);
     }
 

@@ -10,12 +10,23 @@
  */
 
 namespace Lws\BaseService;
-
+use Lws\Api;
+use Lws\Curl;
 class Helper
 {
-
-    public function test()
+    private $config;
+    public function __construct($config = [])
     {
-        return '老狗真是狗!';
+        $this->config = $config;
+    }
+
+    public function getAccessToken()
+    {
+        $url = Api::ACCESS_TOKEN;
+        $url = str_replace('APPID',$this->config['app_id'],$url);
+        $url = str_replace('APPSECRET',$this->config['secret'],$url);
+        $res = Curl::post($url);
+        $res = json_decode($res,true);
+        return $res['access_token'];
     }
 }
